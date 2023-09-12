@@ -1,0 +1,231 @@
+//====================================================================================================
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	// .header__tickers
+	&__tickers {
+	}
+	// .header__menu
+	&__menu {
+	}
+}
+.tickers-header {
+	position: relative;
+	z-index: 120;
+	// .tickers-header__wrapper
+	&__wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	// .tickers-header__wrapper--top
+	&__wrapper--top {
+		// @include adaptiveValue('padding-block', 15, 10);
+		background-color: var(--bg-primary);
+		border-block: 3px solid #000;
+		@media (max-width: $mobile) {
+			border-block: 2px solid #000;
+		}
+	}
+	// .tickers-header__ticker
+	&__ticker {
+		line-height: normal;
+		white-space: nowrap;
+	}
+	// .tickers-header__wrapper--bottom
+	&__wrapper--bottom {
+		// @include adaptiveValue('padding-block', 8, 5);
+		background-color: var(--bg-secondary);
+		border-bottom: 3px solid #000;
+		@media (max-width: $mobile) {
+			border-bottom: 2px solid #000;
+		}
+	}
+}
+
+.ticker-top {
+	@include adaptiveValue('padding-inline', 45, 19);
+	color: var(--text-primary);
+	white-space: nowrap;
+	font-weight: 500;
+	@include adaptiveValue('font-size', 38, 12);
+	animation: ticker-top 15s linear infinite;
+	// .ticker__days-left
+	&__days-left {
+	}
+}
+
+@keyframes ticker-top {
+	0% {
+		transform: translateZ(0);
+	}
+	100% {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+.ticker-bottom {
+	@include adaptiveValue('font-size', 22, 10);
+	@include adaptiveValue('padding-inline', 42, 12);
+	font-weight: 700;
+	animation: ticker-bottom 15s linear infinite;
+	// .ticker-bottom__days-left
+	&__days-left {
+	}
+	// .ticker-bottom__text
+	&__text {
+		display: inline-block;
+		span {
+			&.text-line {
+				display: none;
+				@media (max-width: $mobile) {
+					display: inline-block;
+				}
+			}
+			&.text-desktop {
+				display: none;
+				@media (min-width: $mobile) {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+@keyframes ticker-bottom {
+	100% {
+		transform: translateZ(0);
+	}
+	0% {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+.menu {
+	// .menu__container
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+	}
+	// .menu__icon-wrapper
+	&__icon-wrapper {
+		z-index: 101;
+		display: none;
+		margin-top: toRem(5);
+		justify-content: center;
+		align-items: center;
+		width: toRem(50);
+		height: toRem(50);
+		border-radius: 50%;
+		background-color: var(--bg-primary);
+		box-shadow: toRem(3) toRem(3) 0 #000;
+		border: toRem(2) solid #000;
+		@media (max-width: $mobile) {
+			display: flex;
+		}
+	}
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		padding: toRem(100) toRem(50) toRem(30) toRem(50);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: -100%;
+		background-color: var(--bg-primary);
+		transition: all 0.2s ease 0s;
+		overflow: auto;
+		&::before {
+			position: fixed;
+			content: '';
+			width: 100%;
+			height: toRem(100);
+			top: 0;
+			left: -100%;
+			background-color: var(--bg-primary);
+		}
+		.menu-open & {
+			transition: all 0.2s ease 0s;
+			left: 0;
+			&::before {
+				transition: all 0.2s ease 0s;
+				left: 0;
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: toRem(20);
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		@include adaptiveValue('font-size', 35, 25);
+		font-weight: 700;
+		color: #fff;
+	}
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: '';
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

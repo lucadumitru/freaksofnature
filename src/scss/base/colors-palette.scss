@@ -1,0 +1,28 @@
+// ===============
+// colors palette
+// ===============
+:root {
+	// Site colors :
+	// =================================================================
+	--primary: #0a9396; // Site main color
+	--secondary: #94d2bd; // Site secondary color
+	--accent: #0090c1; // Site accent color
+	--inverse: #ffff3f; // Site inverse color
+
+	// Background colors :
+	// =================================================================
+	--bg-primary: #d9366f; // BG secondary background color
+	--bg-secondary: #ffbf00; // BG primary background color
+	--bg-section: #fb7b04; // BG section
+	--bg-accent: #605dd4;
+	--bg-inverse: #a09ef4;
+
+	// Text colors (Текстові кольори):
+	// =================================================================
+	--text-primary: #fff;
+	// Text primary text color - (Основний текстовий колір сайту)
+	--text-secondary: #080708; // Text secondary text color - (Додатковий текстовий колір сайту)
+	--text-accent: #e8eddf; // Text accent - наприклад, може використовуватися для встановлення кольору тексту для акцентних елементів на сторінці, таких як заголовки або кнопки.
+	--text-inverse: #e8eddf; // Text inverse - наприклад, може використовуватися для налаштування кольору тексту на темному фоні.
+	// =================================================================
+}

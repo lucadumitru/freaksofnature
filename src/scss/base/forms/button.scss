@@ -1,0 +1,98 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	line-height: normal;
+	text-transform: uppercase;
+	text-align: center;
+	display: inline-flex;
+	align-items: center;
+	background-color: #fff;
+	border: toRem(4.5) solid #000;
+	box-shadow: toRem(20) toRem(15) 0 #000;
+	transition: all 0.2s ease 0s;
+	font-weight: 700;
+	@media (any-hover: hover) {
+		&:hover {
+			color: #fff;
+			transition: all 0.2s ease 0s;
+			background-color: var(--bg-secondary);
+		}
+	}
+	@media (max-width: $mobile) {
+		font-weight: 500;
+		border: toRem(2) solid #000;
+		box-shadow: toRem(7) toRem(4) 0 #000;
+	}
+	&--fw {
+		width: 100%;
+	}
+	&--big {
+		@include adaptiveValue('padding-block', 45, 10);
+		@include adaptiveValue('padding-inline', 55, 15);
+		@include adaptiveValue('font-size', 43, 14);
+		border-radius: toRem(114);
+		column-gap: toRem(10);
+		justify-content: center;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+	&--medium {
+		white-space: nowrap;
+		@include adaptiveValue('padding-block', 35, 10);
+		@include adaptiveValue('padding-inline', 20, 15);
+		@include adaptiveValue('font-size', 30, 10);
+		border-radius: toRem(81);
+		width: 100%;
+		justify-content: center;
+	}
+	&--colored {
+		@include adaptiveValue('padding', 20, 15);
+		@include adaptiveValue('font-size', 20, 12);
+		background-color: var(--bg-secondary);
+		color: #fff;
+		border: toRem(2) solid #000;
+		box-shadow: toRem(12) toRem(12) 0 #000;
+		border-radius: toRem(61);
+		width: 100%;
+		justify-content: center;
+		transition: all 0.2s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #000;
+				transition: all 0.2s ease 0s;
+				background-color: var(--bg-primary);
+			}
+		}
+	}
+	&--icon {
+		@include adaptiveValue('padding-block', 15, 10);
+		@include adaptiveValue('padding-inline', 55, 10);
+		@include adaptiveValue('font-size', 30, 10);
+		border-radius: 81.718px;
+		border: 3.269px solid #000;
+		justify-content: space-evenly;
+		@include adaptiveValue('column-gap', 18, 5);
+		@media (max-width: $mobile) {
+			border: toRem(2) solid #000;
+			box-shadow: toRem(7) toRem(4) 0 #000;
+		}
+		&::before {
+			@include adaptiveValue('font-size', 50, 20);
+		}
+	}
+	&--ticket {
+		@media (max-width: $mobile) {
+			@include adaptiveValue('column-gap', 30, 10);
+			&::before {
+				content: '';
+				width: toRem(60);
+				height: toRem(60);
+				background: url('@img/icons/ticket-icon.svg') transparent no-repeat
+					0 0 / cover;
+			}
+		}
+	}
+}

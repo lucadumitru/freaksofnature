@@ -1,0 +1,353 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.title {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: normal;
+	font-weight: 700;
+	&--shadow {
+		@include adaptiveValue('font-size', 90, 25);
+		color: var(--text-primary);
+		-webkit-text-stroke-width: toRem(3);
+		-webkit-text-stroke-color: black;
+		text-shadow: toRem(10) toRem(4) 0 #000;
+		@media (max-width: $mobile) {
+			-webkit-text-stroke-width: toRem(1);
+			-webkit-text-stroke-color: black;
+			text-shadow: toRem(5) toRem(1) 0 #000;
+		}
+	}
+	&--small {
+		@include adaptiveValue('font-size', 48, 20);
+	}
+	&--big {
+		color: #fff;
+		@include adaptiveValue('font-size', 62, 17);
+	}
+}
+
+.text {
+	@include adaptiveValue('font-size', 20, 14);
+	line-height: normal;
+	p {
+		margin-bottom: toRem(20);
+	}
+	p + p {
+		margin-bottom: 0;
+	}
+	&--big {
+		text-align: center;
+		@include adaptiveValue('font-size', 30, 12);
+	}
+}
+
+.border-radius {
+	border: toRem(3) solid #000;
+	&--20 {
+		border-radius: toRem(20);
+		@media (max-width: $mobile) {
+			border-radius: toRem(10);
+		}
+	}
+	&--35 {
+		border-radius: toRem(35);
+		box-shadow: toRem(7) toRem(4) 0 #000;
+		@media (max-width: $mobile) {
+			border-radius: toRem(10);
+		}
+	}
+	&--40 {
+		border-radius: toRem(40);
+		box-shadow: toRem(10) toRem(4) 0 #000;
+		@media (max-width: $mobile) {
+			border-radius: toRem(20);
+		}
+	}
+}
+
+.link {
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+//  ========================================================================================================================================================
+// Competition ====================================================================================================
+.competition {
+	position: relative;
+	z-index: 2;
+	@include adaptiveValue('margin-top', 40, -30);
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 50, 30);
+	}
+	// .competition__container
+	&__container {
+	}
+	// .competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 94, 23);
+		}
+	}
+	// .competition__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue('row-gap', 63, 25);
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 74, 10);
+		}
+	}
+	// .competition__main
+	&__main {
+	}
+	// .competition__winners
+	&__winners {
+	}
+	// .competition__timeline
+	&__timeline {
+	}
+	// .competition__button
+	&__button {
+		display: flex;
+		justify-content: center;
+	}
+}
+// Competition-main ========================================================================================================================================================
+.main-competition {
+	// .main-competition__body
+	&__body {
+		display: flex;
+		@include adaptiveValue('min-height', 500, 300);
+		@include adaptiveValue('column-gap', 50, 20);
+		row-gap: toRem(16);
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+	// .main-competition__about
+	&__about {
+	}
+	// .main-competition__requirments
+	&__requirments {
+	}
+}
+.about-competition {
+	display: flex;
+	@include adaptiveValue('gap', 22, 10);
+	background-color: var(--bg-section);
+	@include adaptiveValue('padding', 30, 15);
+	@media (min-width: $mobile) {
+		flex: 1 1 toRem(730);
+	}
+	// .about-competition__content
+	&__content {
+		flex: 1 1 50%;
+		background-color: #fff;
+		@include adaptiveValue('padding', 20, 10);
+	}
+	// .about-competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 46, 10);
+		}
+	}
+	// .about-competition__text
+	&__text {
+	}
+	// .about-competition__img
+	&__img-ibg {
+		flex: 1 1 50%;
+		overflow: hidden;
+	}
+}
+.requirments-competition {
+	@include adaptiveValue('padding', 45, 30);
+	background-color: var(--bg-inverse);
+	@media (min-width: $mobile) {
+		flex: 0 3 toRem(468);
+	}
+	// .requirments-competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 46, 12);
+		}
+	}
+	// .requirments-competition__text
+	&__text {
+	}
+}
+// Competition-winners ====================================================================================================
+.winners-competition {
+	// .winners-competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 15);
+		}
+	}
+	// .winners-competition__items
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue('column-gap', 35, 15);
+	}
+	// .winners-competition__item
+	&__item {
+	}
+}
+.item-winners {
+	flex: 1 1 33.33%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue('padding-inline', 35, 5);
+	@include adaptiveValue('padding-top', 75, 5);
+	@include adaptiveValue('padding-bottom', 57, 5);
+	@include adaptiveValue('row-gap', 15, 0);
+
+	// .item-winners__icon
+	&__icon-ibg {
+		padding-bottom: percent(200, 277);
+		img {
+			object-fit: contain;
+		}
+	}
+	// .item-winners__text
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		text-align: center;
+	}
+}
+.icon-01 {
+	img {
+		@include adaptiveValue('top', -40, -7);
+	}
+}
+.icon-02 {
+}
+.icon-03 {
+	img {
+		@include adaptiveValue('padding', 35, 7);
+	}
+}
+
+// Competition-timeline ========================================================================================================================================================
+.timeline-competition {
+	// .timeline-competition__container
+	&__container {
+	}
+	// .timeline-competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 15);
+		}
+	}
+	// .timeline-competition__images
+	&__images {
+	}
+	// .timeline-competition__img-desktop-ibg
+	&__img-desktop-ibg {
+		padding-bottom: percent(588, 1400);
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+	// .timeline-competition__img-mobile-ibg
+	&__img-mobile-ibg {
+		padding-bottom: percent(550, 344);
+
+		@media (min-width: $mobileSmall) {
+			display: none;
+		}
+	}
+}
+// Program-affiliate ========================================================================================================================================================
+.program {
+	background: url('@img/program-bg.svg') transparent no-repeat 0 0 / 100% 100%;
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 73, 20);
+	}
+	// .program__container
+	&__container {
+	}
+	// .program__affiliate
+	&__affiliate {
+	}
+	// .program__edition
+	&__edition {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 70, 15);
+		}
+	}
+	// .program__button
+	&__button {
+		text-align: center;
+	}
+}
+.affiliate-program {
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 128, 30);
+	}
+	// .affiliate-program__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 20);
+		}
+	}
+	// .affiliate-program__form
+	&__form {
+	}
+}
+.form-affiliate {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	max-width: toRem(600);
+	background: #fb7b04;
+	@include adaptiveValue('padding-top', 38, 20);
+	@include adaptiveValue('padding-bottom', 50, 30);
+	@include adaptiveValue('padding-left', 38, 20);
+	@include adaptiveValue('padding-right', 38, 20);
+	// .form-affiliate__text
+	&__text {
+		text-align: center;
+	}
+	// .form-affiliate__inputs
+	&__inputs {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 30, 15);
+		}
+	}
+	// .form-affiliate__input
+	&__input {
+		@include adaptiveValue('padding', 22, 10);
+		width: 100%;
+		border-radius: 21.518px;
+		border: 4.304px solid #000;
+		background: #fff;
+		box-shadow: toRem(5) toRem(5) 0 #000;
+		@media (max-width: $mobile) {
+			border: 2px solid #000;
+			border-radius: 15px;
+			box-shadow: toRem(5) toRem(5) 0 #000;
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		&::placeholder {
+			color: #000;
+			@include adaptiveValue('font-size', 20, 15);
+		}
+	}
+	// .form-affiliate__button
+	&__button {
+		margin: 0 auto;
+		max-width: toRem(400);
+		@media (max-width: $mobile) {
+			max-width: 80%;
+		}
+	}
+}

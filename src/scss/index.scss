@@ -1,0 +1,369 @@
+.main {
+	// .main__hero
+	&__hero {
+	}
+	// .main__querencia
+	&__querencia {
+	}
+	// .main__app
+	&__app {
+	}
+	// .main__dj
+	&__dj {
+	}
+	// .main__afiliate
+	&__afiliate {
+	}
+	// .main__ade
+	&__ade {
+	}
+}
+
+// Hero ========================================================================================================================================================
+.hero-main {
+	background: url('@img/main/hero/hero-bg.png') transparent no-repeat 0 0 /
+		100% 100%;
+	@media (max-width: $tablet) {
+		background-size: cover;
+	}
+	@include adaptiveValue('padding-top', 100, 50);
+	@include adaptiveValue('padding-bottom', 300, 80);
+	// .hero-main__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: toRem(20);
+	}
+	// .hero-main__title-img
+	&__title-img {
+	}
+	// .hero-main__main-img-ibg
+	&__main-img {
+		@include adaptiveValue('margin-left', -100, -20);
+		img {
+			max-width: 100%;
+		}
+	}
+	// .hero-main__buttons
+	&__buttons {
+		max-width: toRem(920);
+		@include adaptiveValue('column-gap', 30, 10);
+		width: 100%;
+		display: flex;
+	}
+	// .hero-main__button
+	&__button {
+		flex: 1 1 50%;
+	}
+}
+// Querencia ========================================================================================================================================================
+.querencia-main {
+	@media (max-width: $mobile) {
+		margin-top: toRem(15);
+	}
+	// .querencia-main__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	// .querencia-main__img
+	&__img {
+		img {
+			max-width: 100%;
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+	// .querencia-main__content
+	&__content {
+	}
+}
+.content-querencia {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include adaptiveValue('column-gap', 60, 20);
+	@media (max-width: $mobile) {
+		flex-direction: column;
+		row-gap: toRem(15);
+	}
+	// .content-querencia__about
+	&__about {
+		@media (min-width: $mobile) {
+			flex: 0 1 toRem(560);
+		}
+		@include adaptiveValue('padding-block', 70, 30);
+		@include adaptiveValue('padding-inline', 30, 10);
+		background-color: var(--bg-section);
+	}
+	// .content-querencia__title
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+	// .content-querencia__text
+	&__text {
+	}
+	// .content-querencia__img
+	&__img {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+// App ========================================================================================================================================================
+.app-main {
+	@include adaptiveValue('margin-top', -0, -50);
+	@include adaptiveValue('padding-top', 350, 120);
+	@include adaptiveValue('padding-bottom', 300, 80);
+	background: url('@img/main/app/bg.png') transparent no-repeat 0 0 / 100% 100%;
+	@media (max-width: $tablet) {
+		background-size: cover;
+	}
+	// .app-main__container
+	&__container {
+		max-width: toRem(900);
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue('row-gap', 50, 20);
+	}
+	// .app-main__title
+	&__title {
+	}
+	// .app-main__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue('column-gap', 50, 15);
+	}
+	// .app-main__content
+	&__content {
+		flex: 0 1 toRem(420);
+	}
+	// .app-main__text
+	&__text {
+		color: #fff;
+		text-align: left;
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 100, 20);
+		}
+	}
+	// .app-main__buttons
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+	}
+	// .app-main__button
+	&__button {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 35, 10);
+		}
+	}
+	// .app-main__phone-img
+	&__phone-img {
+		img {
+			max-height: toRem(639);
+			max-width: 100%;
+		}
+	}
+}
+// DJ Competition ========================================================================================================================================================
+.dj-main {
+	@include adaptiveValue('margin-top', 0, 20);
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 117, 20);
+	}
+	// .dj-main__container
+	&__container {
+	}
+	// .dj-main__title
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	// .dj-main__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+	}
+	// .dj-main__img
+	&__img {
+		z-index: 2;
+		img {
+			@include adaptiveValue('width', 536, 200);
+		}
+	}
+	// .dj-main__content
+	&__content {
+		@include adaptiveValue('margin-top', -100, -35);
+		@include adaptiveValue('margin-bottom', -80, -35);
+		@include adaptiveValue('padding-left', 185, 30);
+		@include adaptiveValue('padding-right', 185, 30);
+		@include adaptiveValue('padding-top', 185, 50);
+		@include adaptiveValue('padding-bottom', 115, 30);
+		background: #605ddb;
+	}
+	// .dj-main__text
+	&__text {
+		text-align: center;
+		color: white;
+	}
+	// .dj-main__button
+	&__button {
+		max-width: toRem(650);
+		width: 100%;
+		@media (max-width: $mobile) {
+			max-width: 80%;
+		}
+		a {
+			width: 100%;
+		}
+	}
+}
+// Affiliate ========================================================================================================================================================
+.affiliate-main {
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 150, 20);
+	}
+	// .affiliate-main__container
+	&__container {
+	}
+	// .affiliate-main__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue('row-gap', 30, 15);
+		@include adaptiveValue('padding', 50, 20);
+		background-color: var(--bg-primary);
+	}
+	// .affiliate-main__title
+	&__title {
+	}
+	// .affiliate-main__text
+	&__text {
+		max-width: toRem(800);
+		color: #fff;
+	}
+	// .affiliate-main__button
+	&__button {
+		max-width: toRem(650);
+		width: 100%;
+		a {
+			width: 100%;
+		}
+	}
+}
+// Ade ========================================================================================================================================================
+.ade-main {
+	@include adaptiveValue('margin-top', 0, -20);
+	@include adaptiveValue('padding-top', 300, 80);
+	background: url('@img/main/ade/ade-bg.png') transparent no-repeat 0 0 / cover;
+	position: relative;
+	&::before {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		content: '';
+		width: 100%;
+		height: toRem(100);
+		background-color: #605ddb;
+	}
+	// .ade-main__container
+	&__container {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue('row-gap', 80, 20);
+	}
+	// .ade-main__edition
+	&__edition {
+	}
+	// .ade-main__button
+	&__button {
+		max-width: toRem(650);
+		width: 100%;
+		a {
+			width: 100%;
+		}
+	}
+	// .ade-main__img
+	&__img {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+.edition-ade {
+	// .edition-ade__title
+	&__title {
+	}
+	// .edition-ade__text
+	&__text {
+	}
+	// .edition-ade__img-ibg
+	&__img-ibg {
+	}
+	// .edition-ade__link
+	&__link {
+	}
+}
+
+.edition-ade {
+	margin: 0 auto;
+	max-width: toRem(1332);
+	//.edition-ade__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 70, 15);
+		}
+	}
+	// .edition-ade__text
+	&__text {
+		font-weight: normal;
+		margin: 0 auto;
+		max-width: percent(1100, 1920);
+		@media (max-width: $mobileSmall) {
+			max-width: 80%;
+		}
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 60, 15);
+		}
+	}
+	// .edition-ade__img-ibg
+	&__img-ibg {
+		padding-bottom: percent(1332, 1332);
+	}
+	// .edition-ade__link
+	&__link {
+		@include adaptiveValue('padding-left', 50, 15);
+		@include adaptiveValue('font-size', 46, 10);
+		position: absolute;
+		text-transform: uppercase;
+		font-weight: 700;
+		white-space: nowrap;
+		left: 50%;
+		bottom: percent(120, 1332);
+		transform: translate(-50%, 0);
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: percent(50, 1332);
+			height: 100%;
+			background: url('@img/icons/location.svg') transparent no-repeat 0 0 /
+				contain;
+		}
+	}
+}

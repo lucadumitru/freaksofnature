@@ -1,0 +1,279 @@
+.competition {
+	// .competition__hero
+	&__hero {
+	}
+	// .competition__dj
+	&__dj {
+	}
+}
+
+// Hero  ========================================================================================================================================================
+.hero-competition {
+	position: relative;
+	margin: 0 toRem(-15);
+	@include adaptiveValue('padding-top', 80, 50);
+	@include adaptiveValue('height', 1400, 550);
+	background-image: url('@img/secondary/hero/dj-img.svg'),
+		url('@img/secondary/hero/bg-img2.png');
+	background-repeat: no-repeat;
+	background-position:
+		center center,
+		top center;
+	background-size:
+		100% 100%,
+		100% 90%;
+	// .hero-competition__content
+	&__content {
+		@include adaptiveValue('padding-top', 60, 20);
+		position: relative;
+		margin: 0 auto;
+		@include adaptiveValue('width', 500, 200);
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	// .hero-competition__title-img
+	&__title-img {
+		img {
+			@include adaptiveValue('width', 323, 131);
+		}
+	}
+	// .hero-competition__partners
+	&__partners {
+	}
+}
+
+.partners-competition {
+	// .partners-competition __link
+	&__link {
+	}
+	// .partners-competition __img
+	img {
+		max-width: 100%;
+	}
+}
+
+// DJ Competition ====================================================================================================
+.dj-competition {
+	position: relative;
+	z-index: 2;
+	@include adaptiveValue('margin-top', 40, -30);
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 50, 30);
+	}
+	// .dj-competition__container
+	&__container {
+	}
+	// .dj-competition__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 94, 23);
+		}
+	}
+	// .dj-competition__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue('row-gap', 63, 25);
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 74, 10);
+		}
+	}
+	// .dj-competition__main
+	&__main {
+	}
+	// .dj-competition__winners
+	&__winners {
+	}
+	// .dj-competition__timeline
+	&__timeline {
+	}
+	// .dj-competition__button
+	&__button {
+		display: flex;
+		justify-content: center;
+	}
+}
+// DJ Main ========================================================================================================================================================
+.main-dj {
+	// .main-dj__body
+	&__body {
+		display: flex;
+		@include adaptiveValue('min-height', 500, 300);
+		@include adaptiveValue('column-gap', 50, 20);
+		row-gap: toRem(16);
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+	// .main-dj__about
+	&__about {
+	}
+	// .main-dj__requirments
+	&__requirments {
+	}
+}
+.about-dj {
+	display: flex;
+	@include adaptiveValue('gap', 22, 10);
+	background-color: var(--bg-section);
+	@include adaptiveValue('padding', 30, 15);
+	@media (min-width: $mobile) {
+		flex: 1 1 toRem(730);
+	}
+	// .about-dj__content
+	&__content {
+		flex: 1 1 50%;
+		background-color: #fff;
+		@include adaptiveValue('padding', 20, 10);
+	}
+	// .about-dj__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 46, 10);
+		}
+	}
+	// .about-dj__text
+	&__text {
+	}
+	// .about-dj__img
+	&__img-ibg {
+		flex: 1 1 50%;
+		overflow: hidden;
+	}
+}
+.requirments-dj {
+	@include adaptiveValue('padding', 45, 30);
+	background-color: var(--bg-inverse);
+	@media (min-width: $mobile) {
+		flex: 0 3 toRem(468);
+	}
+	// .requirments-dj__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 46, 12);
+		}
+	}
+	// .requirments-dj__text
+	&__text {
+	}
+}
+// DJ Winners ====================================================================================================
+.winners-dj {
+	// .winners-dj__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 15);
+		}
+	}
+	// .winners-dj__items
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue('column-gap', 35, 15);
+	}
+	// .winners-dj__item
+	&__item {
+	}
+}
+.item-winners {
+	flex: 1 1 33.33%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue('padding-inline', 35, 5);
+	@include adaptiveValue('padding-top', 75, 5);
+	@include adaptiveValue('padding-bottom', 57, 5);
+	@include adaptiveValue('row-gap', 15, 0);
+
+	// .item-winners__icon
+	&__icon-ibg {
+		padding-bottom: percent(200, 277);
+		img {
+			object-fit: contain;
+		}
+	}
+	// .item-winners__text
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		text-align: center;
+	}
+}
+.icon-01 {
+	img {
+		@include adaptiveValue('top', -40, -7);
+	}
+}
+.icon-02 {
+}
+.icon-03 {
+	img {
+		@include adaptiveValue('padding', 35, 7);
+	}
+}
+
+// DJ Timeline ========================================================================================================================================================
+.timeline-dj {
+	// .timeline-dj__container
+	&__container {
+	}
+	// .timeline-dj__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 15);
+		}
+	}
+	// .timeline-dj__images
+	&__images {
+	}
+	// .timeline-dj__img-desktop-ibg
+	&__img-desktop-ibg {
+		padding-bottom: percent(588, 1400);
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+	// .timeline-dj__img-mobile-ibg
+	&__img-mobile-ibg {
+		padding-bottom: percent(550, 344);
+		@media (min-width: $mobileSmall) {
+			display: none;
+		}
+	}
+}
+// Partners Bottom ========================================================================================================================================================
+.partners-bottom {
+	position: relative;
+	@include adaptiveValue('padding-top', 500, 150);
+	@include adaptiveValue('margin-bottom', -50, -30);
+	background: url('@img/app-bg2.png') transparent no-repeat top center / 100%
+		100%;
+	&::before {
+		z-index: 0;
+		bottom: 0;
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: toRem(150);
+		background-color: #605ddb;
+	}
+	// .partners-bottom__container
+	&__container {
+		max-width: toRem(1050);
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue('row-gap', 50, 20);
+	}
+	// .partners-bottom__img
+	&__img {
+		position: relative;
+		z-index: 2;
+		img {
+			max-width: 100%;
+		}
+	}
+}
